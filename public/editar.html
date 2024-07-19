@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Mandato</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-custom">
+            <div class="container-fluid">
+                <a href="index.html"><img id="logo-fa" src="img/Logofundacion2.png" alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Voluntariado</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="menu.html">Mis mandatos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Quienes somos</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container mt-5">
+        <h2>Editar Mandato de Aporte</h2>
+        <form id="editarMandatoForm">
+            <!-- Campo rut -->
+            <div class="form-group">
+                <label for="rut">RUT</label>
+                <input required placeholder="Ej: 13989345-K" type="text" class="form-control" id="rut" name="rut"
+                    aria-describedby="rutHelp">
+                <div id="rutHelp" class="form-text">
+                    Ingresa el RUT para buscar el mandato a editar.
+                </div>
+            </div>
+
+            <!-- Campo día de cobro -->
+            <div class="form-group">
+                <label for="day">Día de Cobro (Mensual)</label>
+                <input required placeholder="Ej: 5" type="number" class="form-control" id="day" min="1" max="25"
+                    name="day" aria-describedby="dayHelp">
+                <div id="dayHelp" class="form-text">
+                    Ingresa el nuevo día de cobro.
+                </div>
+            </div>
+
+            <!-- Campo monto -->
+            <div class="form-group">
+                <label for="amount">Monto</label>
+                <input required placeholder="Ej: 32000" type="number" class="form-control" id="amount" name="amount"
+                    aria-describedby="amountHelp">
+                <div id="amountHelp" class="form-text">
+                    Ingresa el nuevo monto.
+                </div>
+            </div>
+
+            <!-- Campos de tarjeta -->
+            <div class="form-group">
+                <!-- Campo número tarjeta -->
+                <label for="cardDetails">Número de Tarjeta</label>
+                <input required placeholder="Ej: 4543 XXXX XXXX XXXX" type="text" class="form-control" id="cardDetails"
+                    name="cardDetails" aria-describedby="cardDetailsHelp">
+                <div id="cardDetailsHelp" class="form-text">
+                    Ingresa los nuevos detalles de la tarjeta.
+                </div>
+            </div>
+
+            <!-- Campo CVV -->
+            <div class="form-group">
+                <label for="cvv" class="form-label">CVV</label>
+                <input required placeholder="Ej: 433" type="text" class="form-control" id="cvv" name="cvv"
+                    aria-describedby="cvvHelp">
+                <div id="cvvHelp" class="form-text">
+                    Ingresa el nuevo CVV.
+                </div>
+            </div>
+
+            <!-- Campo fecha de expiración -->
+            <div class="form-group">
+                <label for="expiryDate" class="form-label">Fecha de Expiración</label>
+                <input required placeholder="MM/YY" type="date" class="form-control" id="expiryDate" name="expiryDate"
+                    aria-describedby="expiryDateHelp">
+                <div id="expiryDateHelp" class="form-text">
+                    Ingresa la nueva fecha de expiración.
+                </div>
+            </div>
+
+            <!-- Botón para buscar y editar -->
+            <button type="button" class="btn custom-btn" onclick="buscarYEditar()">Buscar y Editar</button>
+        </form>
+
+        <!-- Espacio para mostrar mensajes de error -->
+        <div id="mensajeError" class="mt-3 text-danger"></div>
+    </div>
+
+    <!-- Bootstrap JS y jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Script personalizado para la funcionalidad de edición -->
+    <script src="js/editar.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/logiaTarjeta.js"></script>
+
+    <!-- 2. Script de JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- 3. Script de JQuery Validate (usa el Script de JQuery anterior) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/jquery.validate.min.js"
+        integrity="sha512-WMEKGZ7L5LWgaPeJtw9MBM4i5w5OSBlSjTjCtSnvFJGSVD26gE5+Td12qN5pvWXhuWaWcVwF++F7aqu9cvqP0A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- 4. Mi Script de Validadores (usa el Script de JQuery y de JQuery Validate anteriores) -->
+    <script src="js/validacionMandato.js" type="text/javascript"></script>
+
+    <script src="path/to/jquery.js"></script>
+    <script src="path/to/jquery.validate.js"></script>
+</body>
+
+</html>

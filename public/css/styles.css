@@ -1,0 +1,184 @@
+/* public/css/styles.css */
+body {
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 600px;
+}
+
+/*Achicamos el logo de la fundación en el navbar y le damos distancia con el primer elemento*/
+#logo-fa {
+    width: 60px;
+    margin-right: 50px;
+}
+
+/*Color de fondo de la navbar*/
+.navbar-custom {
+    background-color: #A80830;
+}
+
+/*Color blanco para las letras de los elementos del navbar*/
+.nav-link {
+    color: white;
+}
+
+/*Le damos color al botón de Registrar*/
+.custom-btn {
+    background-color: #A80830;
+    color: white;
+}
+
+/*Etilo para los errores del formulario*/
+.error {
+    color: red;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+/*Código para darle estilo al contrato online*/
+#signatureArea {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#signatureCanvas {
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #A80830;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #4b0013;
+}
+
+
+/*Estilos del registro del mandato*/
+body {
+    background-color: #f8f9fa;
+}
+
+h1 {
+    text-align: center;
+    color: #343a40;
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none;
+    /* Ocultar modal inicialmente */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Fondo oscuro semitransparente */
+    animation: fadeIn 0.3s ease-out;
+    /* Animación de entrada */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    animation: scaleIn 0.3s ease-out;
+    /* Animación de entrada */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.5);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+#logo-contrato {
+    width: 80px;
+    display: block;
+    margin: 0 auto 20px;
+    /* Centrar la imagen y añadir margen inferior */
+}
+
+/* Estilo para el botón de cerrar */
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    font-size: 28px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.menu-item {
+    padding: 10px;
+}
+
+.list-group-item {
+    text-align: center;
+}
+
+#titulo-menu {
+    text-align: center;
+    margin-top: 40px;
+    color: #333;
+}
